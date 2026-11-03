@@ -1,19 +1,17 @@
-# 《不问凡尘》NPC化身mod制作脚本使用说明
+# 《不问凡尘》NPC化身mod制作脚本
 ![](Gemini_Generated_Image_vk8qlavk8qlavk8q.jfif)
 ## 背景
 
 《不问凡尘》的NPC动作一般有4段，前3段为日常随机动作，第4段为结缘动作。
 游戏中本地制作的化身仅支持单段视频循环4遍，同时还存在文件大小(500MB)、视频时长(30S)和分辨率压缩等诸多限制。为了突破此限制，于是有了此脚本。
 
-本脚本用于拼接4段独立动作视频，**每段视频前后自动扩展1秒静帧画面（官方默认首帧、末帧各持续1秒）**，输出烘焙产物 ==**`b1.mp4` + `b1.mp4.segments.json`**==，用来替换游戏自动烘焙生成的文件，实现4段不同动作播放。
+本脚本用于拼接4段独立动作视频，**每段视频前后自动扩展1秒静帧画面（官方默认首帧、末帧各持续1秒）**，输出烘焙产物 **`b1.mp4` + `b1.mp4.segments.json`**，用来替换游戏自动烘焙生成的文件，实现4段不同动作播放。
 
 ## 前置准备
 
-### 1.视频素材
-
-1. **4段视频**，要求：
+1.**4段视频素材**
 - MP4格式、分辨率、帧率**必须完全一致**
-- 文件命名：`v1.mp4`、`v2.mp4`、`v3.mp4`、`v4.mp4` 分别对应['idle', 'special_idle_01', 'special_idle_02', 'idle_married']，游戏中v1，v2，v3出现概率逐步递减，v4为结缘后的固定动画。(ps：目前高人气老板娘苏倾盏怎么只有一段动画，理论上可以升级为4段，期待道友们的发挥。)
+- 文件命名：`v1.mp4`、`v2.mp4`、`v3.mp4`、`v4.mp4` 分别对应'idle', 'special_idle_01', 'special_idle_02', 'idle_married'，在游戏中v1，v2，v3出现概率逐步递减，v4为结缘后的固定动画。(ps：目前高人气老板娘苏倾盏怎么只有一段动画，理论上可以升级为4段，期待道友们的发挥。)
 
 2.**执行参数**
 
@@ -46,7 +44,7 @@ D:\Program Files (x86)\Steam\steamapps\common\A1\WorldApart_Data\StreamingAssets
    > `C:\Users\Administrator\AppData\LocalLow\Nuverse\WorldApart\Mods\念乔\spaces\15011\npc_150101`
    > 将 `b1.mp4`、`b1.mp4.segments.json` 粘贴到此目录。
 
-Mod文件夹目录结构（必须严格遵守层级），参考官方文档
+   Mod文件夹目录结构（必须严格遵守层级），参考官方文档
 https://bytedance.larkoffice.com/docx/G056drNvvoQelfxxJLDcyFimnGg
 
 6. 如想要上传至创意工坊，在游戏中的**化身**-**上传作品**-**已有文件夹**中将整个Mod文件夹目录上传即可，理论上没有大小限制。但严重违和的话可能会被steam短暂封禁，不要问我怎么知道的。
