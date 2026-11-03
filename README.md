@@ -1,5 +1,5 @@
 # 《不问凡尘》NPC化身mod制作脚本使用说明
-
+![](Gemini_Generated_Image_vk8qlavk8qlavk8q.jfif)
 ## 背景
 
 《不问凡尘》的NPC动作一般有4段，前3段为日常随机动作，第4段为结缘动作。
