@@ -16,9 +16,10 @@
 2.**执行参数**
 
 - **SpaceID**：5位数字，NPC所在场景的编号，可在游戏目录中查询
-- **NpcID**：6位数字，NPC编号，可查阅目录中《NPC索引.md》获取
+- **NpcID**：6位数字，NPC编号，可从附带的NPC索引.md中获取
 
 例如：念乔对应的SpaceID为15011，NpcID为150101
+
 D:\Program Files (x86)\Steam\steamapps\common\A1\WorldApart_Data\StreamingAssets\MergedVideoResources~\spaces\ **15011**\npc_**150101**
 
 ## 操作步骤
@@ -35,8 +36,8 @@ D:\Program Files (x86)\Steam\steamapps\common\A1\WorldApart_Data\StreamingAssets
 4. 脚本自动执行完整流程：
 
    - 提取每段视频首帧、末帧，生成前后各1秒静帧片段
-   - 全部片段进行拼接，输出 `b1.mp4`、`b1.mp4.segments.json`
    - 生成 `tmp_frames` 临时文件夹，存放中间图片与临时视频片段
+   - 全部片段进行拼接，输出 `b1.mp4`、`b1.mp4.segments.json`
 
 5. 脚本执行完毕，把output中的 `b1.mp4`、`b1.mp4.segments.json` 复制到本地Mod对应的NPC目录。
 
@@ -52,8 +53,8 @@ https://bytedance.larkoffice.com/docx/G056drNvvoQelfxxJLDcyFimnGg
 ## 注意事项
 
 1. `v1.mp4~v4.mp4` 只用于本地脚本运算，**不需要放进Mod文件夹**。
-2. `tmp_frames` 是运行产生的临时文件夹，确认输出文件正常后可以直接删除。
-3. **风险提醒**：如果在游戏内重新编辑/烘焙化身，游戏会自动覆盖手动放入的 `b1.mp4` 和 `b1.mp4.segments.json`，覆盖后需要重新复制脚本输出产物进去。
+2. `tmp_frames` 是运行产生的临时文件夹，目前默认删除，如果需要保留可以自行修改bat文件。
+3. **风险提醒**：如果在游戏内重新编辑/烘焙化身，游戏可能会覆盖手动放入的 `b1.mp4` 和 `b1.mp4.segments.json`，覆盖后需要重新复制脚本输出产物进去。
 4. 音频规则：脚本保留原视频音频；前后扩展出来的1秒静帧片段为静音。
 
 ## 故障排查
