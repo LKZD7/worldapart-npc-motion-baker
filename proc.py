@@ -87,12 +87,12 @@ def extract_first_frame(vid_path, out_img):
     subprocess.run(cmd, capture_output=True)
 
 
-def extract_last_frame(vid_path, out_img):
+def extract_last_frame(vid_path, out_img, total_frames):
+    target_n = total_frames - 1
     cmd = [
         "ffmpeg", "-y",
-        "-sseof", "-1",
         "-i", str(vid_path),
-        "-vf", "select=eq(n\\,0)",
+        "-vf", f"select=eq(n\\,{target_n})",
         "-frames:v", "1",
         str(out_img)
     ]
@@ -174,7 +174,8 @@ def main():
         first_img = TMP_DIR / f"{idx}_first.jpg"
         last_img = TMP_DIR / f"{idx}_last.jpg"
         extract_first_frame(vid_path, first_img)
-        extract_last_frame(vid_path, last_img)
+        extract_last_frame(vid_path, last_img, meta["frames"])
+
 
         clip_first = TMP_DIR / f"{idx}_clip_first.mp4"
         clip_last = TMP_DIR / f"{idx}_clip_last.mp4"
